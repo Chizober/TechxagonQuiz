@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lina Teresa Foundation College Mid-Term Test For Second Term</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body> 
+    <div class="container">
+       <div class="quiz">
+        
+        <h3 id="question">Questions Goes here </h3>
+        <div id="answer-button">
+         <button class="btn">Answer 1</button>
+         <button class="btn">Answer 1</button>
+         <button class="btn">Answer 1</button>
+         <button class="btn">Answer 1</button>
+        </div>
+        <button id="next-btn">Next</button>
+       </div>
+    </div>
+<body>
+    <div id="contactInfo"></div>
+
+    <script>
+        // Retrieve data from localStorage
+        var storedName = localStorage.getItem('contactFormDataName');
+        var storedClass = localStorage.getItem('contactFormDataClass');
+
+        // Display data in the contactInfo div
+        var contactInfoDiv = document.getElementById('contactInfo');
+        contactInfoDiv.innerHTML ="<pre>Happy Valentine❤ " + storedName + "</pre>" +
+                                   "<pre>class: " + storedClass + "</pre>"
+                                    
+
+    const questions = [
+    {
+        question: "Python is ……………………… language?",
+        answers : [
+            {text: "a machine", correct: false},
+            {text: "an interpreted", correct: true},
+            {text: "an English", correct: false},
+            {text: "Low level", correct: false}
+        ]
+    },
+    {
+        question: "Python can be written and ran on ……………………...?",
+        answers : [
+            {text: "VSCode", correct: true},
+            {text: " Projector", correct: false},
+            {text: "MS word", correct: false},
+            {text: " Scratch", correct: false}
+        ]
+    },
+    {
+        question: "Costume in Scratch is used to ……………………………………?",
+        answers : [
+            {text: "Create Sounds", correct: false},
+            {text: "Create Backdrops", correct: false},
+            {text: "Create Blocks", correct: false},
+            {text: "Edit Sprites", correct: true}
+        ]
+    },
+    {
+        question: "…………………… Is a container for storing values, information or different data types?",
+        answers : [
+            {text: "Data", correct: false},
+            {text: "Variable", correct: true},
+            {text: "Operators", correct: false},
+            {text: "Scratch", correct: false}
+        ]
+    },
+    {
+        question: "“+” is a ………………………………...operator?",
+        answers : [
+            {text: "Arithmetic", correct: true},
+            {text: "Logical", correct: false},
+            {text: "Comparism", correct: false},
+            {text: "French", correct: false}
+        ]
+    },
+    {
+        question: "(10 > 2) returns what result?",
+        answers : [
+            {text: "Yes", correct: false},
+            {text: "No", correct: false},
+            {text: "True", correct: true},
+            {text: "False", correct: false}
+        ]
+    },
+    {
+        question: "You can start a variable name with a number?",
+        answers : [
+            {text: "True", correct: false},
+            {text: "All of the above", correct: false},
+            {text: "Not Sure", correct: false},
+            {text: "False", correct: true}
+        ]
+    },
+    {
+        question: "Scratch can be used to ………………………………………….?",
+        answers : [
+            {text: "All of the above", correct: true},
+            {text: "Create Games", correct: false},
+            {text: "Create Animations", correct: false},
+            {text: "Create interactive stories", correct: false}
+        ]
+    },
+    {
+        question: "……………………………… is used to tell the sprite, what to do?",
+        answers : [
+            {text: "Sound", correct: false},
+            {text: "Code blocks", correct: true},
+            {text: "Computer", correct: false},
+            {text: "Backdrop", correct: false}
+        ]
+    },
+    {
+        question: "String is a type of ……………………………?",
+        answers : [
+            {text: "None of the Above", correct: false},
+            {text: "Extension", correct: false},
+            {text: "Operator", correct: false},
+            {text: "Data", correct: true}
+        ]
+    },
+    {
+        question: "……………………and ………………………… are examples of comparison operators?",
+        answers : [
+            {text: " OR, >", correct: false},
+            {text: "AND, ==", correct: false},
+            {text: "*, >", correct: false},
+            {text: ">, <", correct: true}
+        ]
+    },
+    {
+        question: "favoriteFoods = ['Indomie','Spaghetti','Beans']. This is a ……………………………?",
+        answers : [
+            {text: "Boolean", correct: false},
+            {text: "Integer", correct: false},
+            {text: "String", correct: false},
+            {text: "List", correct: true}
+        ]
+    },
+    {
+        question: " '='' is called ……………………in python?",
+        answers : [
+            {text: "Equal to", correct: false},
+            {text: "Logical operator", correct: false},
+            {text: "Symbol", correct: false},
+            {text: "Assignment operator", correct: true}
+        ]
+    },
+    {
+        question: "True is what data type?",
+        answers : [
+            {text: "String", correct: false},
+            {text: "Tuple", correct: false},
+            {text: "Integer", correct: false},
+            {text: "Boolean", correct: true}
+        ]
+    },
+    {
+        question: "The Machine needs ……………………… to understand Python language?",
+        answers : [
+            {text: "Teacher", correct: false},
+            {text: "Student", correct: false},
+            {text: "Speaker", correct: false},
+            {text: "Interpreter", correct: true}
+        ]
+    },
+    {
+        question: "A variable can store different data types.",
+        answers : [
+            {text: "None of the above", correct: false},
+            {text: "False", correct: false},
+            {text: "All of the Above", correct: false},
+            {text: "True", correct: true}
+        ]
+    },
+    {
+        question: "An integer is a ………………?",
+        answers : [
+            {text: "Decimal Number", correct: false},
+            {text: "Fraction", correct: false},
+            {text: "Letter", correct: false},
+            {text: "Whole Number", correct: true}
+        ]
+    },
+    {
+        question: "What is the extension for a Python file?",
+        answers : [
+            {text: ".cs", correct: false},
+            {text: ".html", correct: false},
+            {text: ".cy", correct: false},
+            {text: ".py", correct: true}
+        ]
+    },
+    {
+        question: "Programming is the process of creating computer.................?",
+        answers : [
+            {text: "Games", correct: false},
+            {text: "None of the Above", correct: false},
+            {text: "Hardware", correct: false},
+            {text: "Software", correct: true}
+        ]
+    },
+    {
+        question: "……………........... Is a career in Programming?",
+        answers : [
+            {text: "Game Developer", correct: false},
+            {text: "Software Engineer", correct: false},
+            {text: "Web Developer", correct: false},
+            {text: " All of the Above", correct: true}
+        ]
+    },
+    
+];
+
+const questionElement = document.getElementById("question");
+const answerButtons = document.getElementById("answer-button");
+const nextButton = document.getElementById("next-btn");
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+const shuffleArray = (array) => {
+    for (let quesNum = array.length - 1; quesNum > 0; quesNum--) {
+        const j = Math.floor(Math.random() * (quesNum + 1));
+        [array[quesNum], array[j]] = [array[j], array[quesNum]];
+    }
+    return array;
+};
+
+const startQuiz = () => {
+    currentQuestionIndex = 0;
+    score = 0;
+    nextButton.innerHTML = "Next";
+    const shuffledQuestions = shuffleArray(questions);
+    localStorage.setItem('quizQuestions', JSON.stringify(shuffledQuestions));
+    showQuestions();
+};
+
+const showQuestions = () => {
+    resetState();
+    const storedQuestions = JSON.parse(localStorage.getItem('quizQuestions'));
+    let currentQuestion = storedQuestions[currentQuestionIndex];
+    let questionNo = currentQuestionIndex + 1;
+    questionElement.innerHTML = `${questionNo}. ${currentQuestion.question}.`;
+
+    currentQuestion.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerText = answer.text;
+        button.classList.add("btn");
+        answerButtons.appendChild(button);
+        if (answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener("click", selectedAnswer);
+    });
+};
+
+const resetState = () => {
+    nextButton.style.display = "none";
+    while (answerButtons.firstChild) {
+        answerButtons.removeChild(answerButtons.firstChild);
+    }
+};
+
+const selectedAnswer = (e) => {
+    const selectedBtn = e.target;
+    const isCorrect = selectedBtn.dataset.correct === "true";
+    if (isCorrect) {
+        selectedBtn.classList.add("answerClicked");
+        score++;
+    } else {
+        selectedBtn.classList.add("answerClicked");
+    }
+    Array.from(answerButtons.children).forEach(button => {
+        // if (button.dataset.correct === "true") {
+        //     button.classList.add("rightAnswer")
+        // }
+        button.disabled = true;
+    });
+    nextButton.style.display = "block";
+};
+
+const showScore = () => {
+    resetState();
+    const storedScore = localStorage.getItem("userScore");
+    if (storedScore) {
+        score = parseInt(storedScore)
+    }
+    questionElement.innerHTML = `${storedName}  Scored ${score} Out Of ${questions.length}`;
+    nextButton.innerHTML = "Your test's Over!";
+    nextButton.style.display = "block";
+    nextButton.disabled = true;
+    localStorage.setItem("userScore", score.toString())
+ window.addEventListener("beforeunload", (e) => {
+ e.preventDefault();
+ e.returnValue = score;
+})
+};
+
+const handleNextButton = () => {
+    currentQuestionIndex++;
+    const storedQuestions = JSON.parse(localStorage.getItem('quizQuestions'));
+    if (currentQuestionIndex < storedQuestions.length) {
+        showQuestions();
+    } else {
+        showScore();
+    }
+};
+
+nextButton.addEventListener("click", () => {
+    const storedQuestions = JSON.parse(localStorage.getItem('quizQuestions'));
+    if (currentQuestionIndex < storedQuestions.length) {
+        handleNextButton();
+    } else {
+        startQuiz();
+    }
+});
+
+window.onload = function() {
+    const storedScore = localStorage.getItem("userScore");
+    if (storedScore) {
+        score = parseInt(storedScore);
+        showScore();
+    }
+}
+// localStorage.clear(); 
+startQuiz();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Techxagon Mid-Term Test</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .info-container h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 5px;
+      }
+      .info-container h4 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-left: 20px;
+      }
+      .info-container li {
+        font-size: 1.5rem;
+      }
+      ol {
+        margin-top: -15px;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 500px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      #contactForm input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      #contactForm button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      #contactForm button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="info-container">
+      <h1>Lina Teresa Techxagon Mid-Term Test For 2nd Term</h1>
+      <h4>20 Objectives Questions</h4>
+      <h4>Rules</h4>
+      <ol>
+        <li>Answer all Questions,Each co</li>
+        <li>
+          Once Your Done, Do not shut down your laptop, or you lose your marks
+        </li>
+        <li>Remember To Fill in Your Name and Class, or no Score For You</li>
+      </ol>
+    </div>
+    <!-- Form to collect user input -->
+
+    <form id="contactForm">
+      <label for="name">Enter Your Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="myclass">Enter Your Class:</label>
+      <input type="text" id="myclass" name="myclass" required />
+      <button type="button" onclick="storeFormData()">Submit</button>
+    </form>
+    <h1 style="font-family: cursive">Best of Luck</h1>
+    <script>
+      function storeFormData() {
+        // Get form data
+        var name = document.getElementById("name").value;
+        var myclass = document.getElementById("myclass").value;
+
+        // Store data in localStorage
+        localStorage.setItem("contactFormDataName", name);
+        localStorage.setItem("contactFormDataClass", myclass);
+
+        // Redirect to the new page
+        window.location.href = "questions.html";
+      }
+    </script>
+  </body>
+</html>
